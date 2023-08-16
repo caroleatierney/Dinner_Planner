@@ -23,7 +23,7 @@
         <!-- This is a bootstrap table -->
         <table id="dinnerPlannerTable" class="table text-center table-bordered" style="border-color: #f4a261; border-style:solid; border-width:8px; background-color:e9c46a; color: #2a9d8f">
             <thead>
-                <tr>
+                <tr style = "color: #e76f51">
                     <th scope="col">Day of Week</th>
                     <th>Date</th>
                     <th scope="col">Protein</th>
@@ -34,7 +34,7 @@
             </thead>
             <tbody>
                 <tr>
-                    <th scope="row">Tuesday</th>
+                    <th style = "color: #e76f51" scope="row">Tuesday</th>
                     <td>08/01/2023</td>
                     <td>Fried chicken fingers</td>
                     <td>Honey glazed petite carrots</td>
@@ -43,7 +43,7 @@
                     </tr>
                 </tr>
                 <tr>
-                    <th scope="row">Wednesday</th>
+                    <th style = "color: #e76f51" scope="row">Wednesday</th>
                     <td>08/02/2023</td>
                     <td>Grilled cheese panini</td>
                     <td>Tomato soup & tomatoes & basil</td>
@@ -51,7 +51,7 @@
                     <td>3</td>
                 </tr>
                 <tr>
-                    <th scope="row">Thursday</th>
+                    <th style = "color: #e76f51" scope="row">Thursday</th>
                     <td>08/03/2023</td>
                     <td>Marinated grilled steak</td>
                     <td>Spaghetti squash</td>
@@ -59,7 +59,7 @@
                     <td>5</td>
                 </tr>
                 <tr>
-                    <th scope="row">Friday</th>
+                    <th style = "color: #e76f51" scope="row">Friday</th>
                     <td>08/04/2023</td>
                     <td>Salmon</td>
                     <td>Spinach</td>
@@ -67,7 +67,7 @@
                     <td>2</td>
                 </tr>
                 <tr>
-                    <th scope="row">Saturday</th>
+                    <th style = "color: #e76f51" scope="row">Saturday</th>
                     <td>08/05/2023</td>
                     <td>Hamburgers</td>
                     <td>Corn</td>
@@ -75,15 +75,15 @@
                     <td>6</td>
                 </tr>
                 <tr>
-                    <th scope="row">Sunday</th>
+                    <th style = "color: #e76f51" scope="row">Sunday</th>
                     <td>08/06/2023</td>
                     <td>Shrimp</td>
                     <td>Peas</td>
                     <td>Pasta</td>
-                    <td></td>
+                    <td>4</td>
                 </tr>
                 <tr>
-                    <th scope="row">Monday</th>
+                    <th style = "color: #e76f51"scope="row">Monday</th>
                     <td>08/07/2023</td>
                     <td>Carne Asada</td>
                     <td>Pico De Gallo</td>
@@ -98,38 +98,38 @@
             <div class="row">
                 <div class="col-12 pt-5" style="color:#f4a261">
                     <form>
-                        <button id="anotherMeal" type="button" onclick="addMeal()" class="btn btn-secondary">Click to add another meal</button>
+                        <h3>Use the following form to create a new dinner, then click submit</h3>
                         <div class="form-group">
                             <div class="row">
                                 <div class="col-4">
                                     <label for="dayOfWeek">Day Of Week</label>
-                                    <input type="text" class="form-control" id="dayOfWeek" aria-describedby="Day Of Week">
+                                    <input id = "dayOfWeek"; type="text" class="form-control" id="dayOfWeek" aria-describedby="Day Of Week">
                                 </div>
                                 <div class="col-4">
                                     <label for="date">Date</label>
-                                    <input type="date" class="form-control" id="date" aria-describedby="Date">
+                                    <input id = "date"; type="date" class="form-control" id="date" aria-describedby="Date">
                                 </div>
                                 <div class="col-4">
                                     <label for="howMany">How many home?</label>
-                                    <input type="text" class="form-control" id="howManyHome" aria-describedby="How many home?">
+                                    <input id="howMany"; type="text" class="form-control" id="howManyHome" aria-describedby="How many home?">
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-4">
                                     <label for="text">Protein</label>
-                                    <input type="protein" class="form-control" id="protein" aria-describedby="Protein">
+                                    <input id="protein" type="protein" class="form-control" id="protein" aria-describedby="Protein">
                                 </div>
                                 <div class="col-4">
                                     <label for="text">Veggie</label>
-                                    <input type="veggie" class="form-control" id="veggie" aria-describedby="Veggie">
+                                    <input id="veggie"; type="veggie" class="form-control" id="veggie" aria-describedby="Veggie">
                                 </div>
                                 <div class="col-4">
                                     <label for="text">Starch</label>
-                                    <input type="starch" class="form-control" id="starch" aria-describedby="Starch">
+                                    <input id="starch" type="starch" class="form-control" id="starch" aria-describedby="Starch">
                                 </div>
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button id="anotherMeal" type="button" onclick="addMeal()" class="btn btn-secondary">Add</button>
                     </form>
             <script src="index.js"></script>
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
