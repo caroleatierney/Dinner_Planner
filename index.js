@@ -48,7 +48,7 @@ function deleteButton(id) {
 }
 
 function deleteTest(id) {
-    alert(`Deleted row with id: ${id}`);
+    // alert(`Deleted row with id: ${id}`);
     let rowToDelete = document.getElementById(`${id}`);
     console.log(rowToDelete)
     rowToDelete.parentNode.removeChild(rowToDelete);
