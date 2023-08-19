@@ -11,7 +11,7 @@ function processRow() {
     // alert(`'Id added:', ${id}`); // display id just added
 
     let cellArray = ["dayOfWeek", "date", "protein", "veggie", "starch", "howMany", "button"]
-    for (i = 0; i <= 5; i++) {
+    for (i = 0; i <= 6; i++) {
         switch (cellArray[i]) {
             case 'dayOfWeek':
                 let dayCell = row.insertCell(i) // insert day of week
@@ -27,14 +27,14 @@ function processRow() {
                 document.getElementById(cellArray[i]).value = '';
                 break;
             case 'button': // appending after cell intended
-            // row.insertCell(i).appendChild(createDeleteButton(id))
+                row.insertCell(i).appendChild(createDeleteButton(id))
+                break;
             default:
                 row.insertCell(i).innerHTML = document.getElementById(cellArray[i]).value;
                 document.getElementById(cellArray[i]).value = '';
                 break;
         }
     }
-    row.insertCell(6).appendChild(createDeleteButton(id)) // would like this in the case
 }
 
 // Allow user to delete rows of a table dynamically (newly added rows)

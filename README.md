@@ -6,6 +6,4 @@
 - A Bootstrap styled form that allows a user to add a new row to the table when clicking on submit.
 
 ## Issues: 
-- I couldn't pass the id from the row into the button
-- I couldn't append the button in the new rows in the switch statement
-    - it was putting it to the right of the cell
+- I couldn't pass the id from the row into the button but was then told you can't use variables in HTML so It is hard-coded.
