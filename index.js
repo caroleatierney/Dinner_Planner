@@ -34,10 +34,10 @@ function processRow() {
                 break;
         }
     }
-    row.insertCell(6).appendChild(createDeleteButton(id))
+    row.insertCell(6).appendChild(createDeleteButton(id)) // would like this in the case
 }
 
-// Allow user to delete rows of a table dynamically
+// Allow user to delete rows of a table dynamically (newly added rows)
 function createDeleteButton(id) {
     var btn = document.createElement('button');
     btn.className = 'btn btn-info'
@@ -52,6 +52,7 @@ function createDeleteButton(id) {
     return btn;
 }
 
+// This is the delete used for the default tables
 function deleteRow(id) {
     // alert(`Deleted row with id: ${id}`);
     let rowToDelete = document.getElementById(`${id}`);
