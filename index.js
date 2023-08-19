@@ -1,5 +1,5 @@
 // Allow user to add rows to a table dynamically
-function addMeal() {
+function processRow() {
     var rows = document.getElementById('dinnerPlannerTable').getElementsByTagName('tr');
     var tableRowCount = rows.length;
     let id = tableRowCount;
@@ -8,28 +8,33 @@ function addMeal() {
 
     let row = table.insertRow(tableRowCount);
     row.setAttribute('id', `item-${id}`);
+    // alert(`'Id added:', ${id}`); // display id just added
 
-    let cell0 = row.insertCell(0)     // insert day of week
-    cell0.innerHTML = document.getElementById("dayOfWeek").value;
-    cell0.style.color = "#e76f51";
-    cell0.style.fontWeight = "bold"
-    document.getElementById('dayOfWeek').value = '';
-
-    // insert rest of data from buttons
-    let menuArray = ["date", "protein", "veggie", "starch", "howMany"]
-    for (i = 0; i<=4; i++) {
-        if (menuArray[i] == "date") {
-            // change date to object, then mm/dd/yyyy
-            let convDate = document.getElementById(menuArray[i]).value; 
-            convDate = new Date(convDate).toLocaleDateString();
-            row.insertCell(i + 1).innerHTML = convDate;
-        } else {
-            row.insertCell(i + 1).innerHTML = document.getElementById(menuArray[i]).value;
+    let cellArray = ["dayOfWeek", "date", "protein", "veggie", "starch", "howMany", "button"]
+    for (i = 0; i <= 5; i++) {
+        switch (cellArray[i]) {
+            case 'dayOfWeek':
+                let dayCell = row.insertCell(i) // insert day of week
+                dayCell.innerHTML = document.getElementById("dayOfWeek").value;
+                dayCell.style.color = "#e76f51";
+                dayCell.style.fontWeight = "bold"
+                document.getElementById('dayOfWeek').value = '';
+                break;
+            case 'date': // change date to object, then mm/dd/yyyy
+                let convDate = document.getElementById(cellArray[i]).value;
+                convDate = new Date(convDate).toLocaleDateString();
+                row.insertCell(i).innerHTML = convDate;
+                document.getElementById(cellArray[i]).value = '';
+                break;
+            case 'button': // appending after cell intended
+            // row.insertCell(i).appendChild(createDeleteButton(id))
+            default:
+                row.insertCell(i).innerHTML = document.getElementById(cellArray[i]).value;
+                document.getElementById(cellArray[i]).value = '';
+                break;
         }
-        document.getElementById(menuArray[i]).value = '';
     }
     row.insertCell(6).appendChild(createDeleteButton(id))
-    // alert(`'Id added:', ${id}`); // display id just added
 }
 
 // Allow user to delete rows of a table dynamically
@@ -47,7 +52,7 @@ function createDeleteButton(id) {
     return btn;
 }
 
-function deleteTest(id) {
+function deleteRow(id) {
     // alert(`Deleted row with id: ${id}`);
     let rowToDelete = document.getElementById(`${id}`);
     console.log(rowToDelete)
