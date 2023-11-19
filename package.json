@@ -1,21 +1,13 @@
 {
-  "name": "week-10-javascript_and_dom_manipulation",
+  "name": "Dinner Planner",
   "version": "1.0.0",
   "description": "Using HTML, Bootstrap, and JavaScript create a single page website that contains the following: A Bootstrap styled table representing your choice of data. A Bootstrap styled form that allows a user to add a new row to the table when clicking on submit.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/caroleatierney/Week10TheDOM.git"
-  },
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/caroleatierney/Week10TheDOM/issues"
-  },
-  "homepage": "https://github.com/caroleatierney/Week10TheDOM#readme",
   "dependencies": {
     "bootstrap": "^5.3.1"
   }
